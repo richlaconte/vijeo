@@ -5,6 +5,11 @@ class Game {
         this.settings = {};
         this.gameObjects = [];
         this.addGameObject = (name) => {
+            for (let i = 0; i < this.gameObjects.length; i++) {
+                if (this.gameObjects[i].name === name) {
+                    return 'gameobject with that name already exists';
+                }
+            }
             let obj = new GameObject(name);
             this.gameObjects.push(obj);
         }
