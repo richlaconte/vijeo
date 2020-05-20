@@ -19,6 +19,13 @@ class Game {
             }
             this.variables.push(variable);
         }
+        this.getGameObjectByName = (name) => {
+            for (let i = 0; i < this.gameObjects.length; i++) {
+                if (this.gameObjects[i].name === name) {
+                    return this.gameObjects[i];
+                }
+            }
+        }
     }
 }
 
