@@ -1,0 +1,25 @@
+const GameObject = require('./GameObject');
+
+class Game {
+    constructor() {
+        this.settings = {};
+        this.gameObjects = [];
+        this.addGameObject = (name) => {
+            let obj = new GameObject(name);
+            this.gameObjects.push(obj);
+        }
+        this.variables = [];
+        this.addVariable = (name, type) => {
+            let variable = new variable(name, type);
+            // Dupe name check
+            for (let i = 0; i < this.variables.length; i++) {
+                if (this.variables[i].name === name) {
+                    return 'a variable already exists with that name';
+                }
+            }
+            this.variables.push(variable);
+        }
+    }
+}
+
+module.exports = Game;
